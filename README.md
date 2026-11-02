@@ -54,7 +54,11 @@ A successful boot alone does not mean that graphics acceleration, audio, network
 - Broadcom BCM43xx Wi-Fi adapter
 - Built-in microphone, line input, and internal speakers
 
-The initial inventory resolves the model, display, and GPU identity; Linux driver and panel behavior remain untested. Keep serial numbers, hardware UUIDs, MAC addresses, BSSIDs, and network names out of public logs and documentation.
+The initial inventory resolves the model, display, and GPU identity. Linux driver behavior and native-resolution output remain untested. Keep serial numbers, hardware UUIDs, MAC addresses, BSSIDs, and network names out of public logs and documentation.
+
+## Current recovery status
+
+On 2026-11-02, the iMac booted from the Ubuntu Server 26.04.1 LTS amd64 USB and reached the installer's language-selection screen. The USB image was read back and matched the downloaded ISO. This confirms boot to the text installer; installation has not started, and no Linux hardware support beyond this boot has been established.
 
 ### Project goals
 

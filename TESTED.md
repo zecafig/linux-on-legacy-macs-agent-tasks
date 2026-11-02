@@ -13,10 +13,11 @@ Status vocabulary:
 
 | Area | Hardware baseline | Linux status |
 |---|---|---|
+| USB boot and installer | Ubuntu Server 26.04.1 LTS amd64 image, read-back verified | **Tested here (2026-11-02):** boots to installer language selection; installation not started |
 | Model, CPU, memory | `iMac9,1`; Core 2 Duo 2.66 GHz; 4 GB DDR3 | Not tested |
-| Internal display | 1920 × 1200 | Not tested |
+| Internal display | 1920 × 1200 | Installer language screen visible; native resolution and graphics acceleration not verified |
 | GPU | NVIDIA GeForce 9400M, up to 256 MB shared/dynamic memory | Driver, modesetting, acceleration, and panel stability not tested |
-| Storage | Kingston SATA SSD, approximately 120 GB | Boot, installer detection, and Linux SMART attributes not tested |
+| Storage | Kingston SATA SSD, approximately 120 GB | Internal disk detection, read/write, and Linux SMART attributes not tested |
 | Wi-Fi | Broadcom BCM43xx adapter | Driver, firmware, and throughput not tested |
 | Audio | Internal microphone, line input, and speakers | Not tested |
 | Bluetooth, camera, brightness | Not recorded | Not tested |
