@@ -6,7 +6,7 @@
 
 This repository documents the recovery of older Intel Macs using current Linux distributions, kernels, and applications. It records the process machine by machine: what was inspected, what was attempted, what worked, what failed, and what remains unknown.
 
-The first target is a 27-inch iMac with an Intel Core 2 Duo and 4 GB of RAM. Its exact model identifier, graphics configuration, storage health, and other hardware details will be recorded after inventory from the installed macOS system.
+The first target is an Early 2009 24-inch iMac (`iMac9,1`) with an Intel Core 2 Duo and 4 GB of RAM. Its initial hardware inventory is recorded below.
 
 This project complements [linux-on-t2-mac-agent-tasks](https://github.com/zecafig/linux-on-t2-mac-agent-tasks), which documents a separate Linux recovery and QA journey for a Mac with Apple T2 hardware. Procedures and results are not assumed to transfer between generations.
 
@@ -43,17 +43,18 @@ A successful boot alone does not mean that graphics acceleration, audio, network
 
 ## Initial target
 
-### Reported configuration
+### Initial hardware inventory
 
-- Apple iMac, 27-inch
-- Intel Core 2 Duo
-- 4 GB RAM
-- Exact model identifier: **not yet recorded**
-- GPU: **not yet recorded**
-- Storage device and health: **not yet recorded**
-- macOS version: **not yet recorded**
+- Apple iMac (Early 2009), 24-inch, model identifier `iMac9,1`
+- Intel Core 2 Duo at 2.66 GHz, two cores, 6 MB shared L2 cache
+- 4 GB DDR3-1067 RAM, installed as 2 × 2 GB; Apple lists support up to 8 GB
+- NVIDIA GeForce 9400M, up to 256 MB dynamically allocated/shared video memory
+- Internal LCD at 1920 × 1200 native resolution
+- Kingston SV300S37A120G SATA SSD, approximately 120 GB
+- Broadcom BCM43xx Wi-Fi adapter
+- Built-in microphone, line input, and internal speakers
 
-The reported CPU and display size are not enough to identify the exact hardware revision. Record the model identifier and GPU before applying model-specific instructions.
+The initial inventory resolves the model, display, and GPU identity; Linux driver and panel behavior remain untested. Keep serial numbers, hardware UUIDs, MAC addresses, BSSIDs, and network names out of public logs and documentation.
 
 ### Project goals
 
@@ -63,15 +64,15 @@ The reported CPU and display size are not enough to identify the exact hardware 
 - Consider XFCE as a lightweight desktop, with X11 as the initial graphical baseline if the hardware supports it.
 - Verify that the current Google Chrome release can be installed and launched on the chosen supported Linux distribution.
 - Document actual usability with 4 GB RAM and a small number of browser tabs.
-- Preserve the existing macOS installation during inventory and non-destructive testing. Any decision to repartition, erase, or replace it requires a separate explicit confirmation.
+- Preserve the existing disk contents during inventory and non-destructive testing. Any decision to repartition, erase, or replace them requires a separate explicit confirmation.
 
 These are goals, not compatibility claims. In particular, the GPU and internal panel must be tested before deciding whether an accelerated desktop session is practical.
 
 ## Recovery workflow
 
-### 1. Inventory the Mac in macOS
+### 1. Record hardware inventory
 
-Record the exact model identifier, CPU, memory, GPU, display, storage, network interfaces, audio devices, firmware version, and macOS version. Check the storage device's reported health where possible. Keep raw command output with identifying details such as serial numbers removed before publishing.
+Record the exact model identifier, CPU, memory, GPU, display, storage, network interfaces, audio devices, and firmware version. Check storage health where possible. Keep identifying details such as serial numbers out of public notes.
 
 ### 2. Boot and inspect Ubuntu without installing
 
